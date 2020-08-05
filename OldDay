@@ -18,34 +18,41 @@ public class OldDay {
         System.out.println("How many days after today? ");
         int dayAdd = scanDay.nextInt();
 
-        System.out.println(dayIn + " " + dayAdd);
         switch(dayIn){
             case "Monday":
                 dayCount = 0;
+                break;
             case "Tuesday":
                 dayCount = 1;
+                break;
             case "Wednesday":
                 dayCount = 2;
+                break;
             case "Thursday":
                 dayCount = 3;
+                break;
             case "Friday":
                 dayCount = 4;
+                break;
             case "Saturday":
                 dayCount = 5;
+                break;
             case "Sunday":
                 dayCount = 6;
+                break;
             default:
                 System.out.println("Sorry! Better luck next time!!!");
+                break;
         }
 
-        dayAdd = (dayAdd % 7) + dayCount;
-
-        /*if(dayAdd < 0){
-            dayAdd = dayAdd%7 + dayCount;
+        if (dayAdd < 0) {
+            dayAdd = (dayAdd + dayCount + 7) % 7;
         }
-        else{
-            dayAdd = (dayAdd + dayCount)%7;
-        }*/
+        else
+        {
+            dayAdd = (dayAdd + dayCount) % 7;
+        }
+
         System.out.println("Output day: "+week[dayAdd]);
     }
 }
