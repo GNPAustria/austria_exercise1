@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class OldDay {
+
+    public String[] week = new String[]{
+            "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday",
+            "Saturday", "Sunday"
+    };
+    public int dayCount;
+
+    public void InputDay() {
+
+        Scanner scanDay = new Scanner(System.in);
+        System.out.println("Enter day today: ");
+        String dayIn = scanDay.nextLine();
+
+        System.out.println("How many days after today? ");
+        int dayAdd = scanDay.nextInt();
+
+        System.out.println(dayIn + " " + dayAdd);
+        switch(dayIn){
+            case "Monday":
+                dayCount = 0;
+            case "Tuesday":
+                dayCount = 1;
+            case "Wednesday":
+                dayCount = 2;
+            case "Thursday":
+                dayCount = 3;
+            case "Friday":
+                dayCount = 4;
+            case "Saturday":
+                dayCount = 5;
+            case "Sunday":
+                dayCount = 6;
+            default:
+                System.out.println("Sorry! Better luck next time!!!");
+        }
+
+        dayAdd = (dayAdd % 7) + dayCount;
+
+        /*if(dayAdd < 0){
+            dayAdd = dayAdd%7 + dayCount;
+        }
+        else{
+            dayAdd = (dayAdd + dayCount)%7;
+        }*/
+        System.out.println("Output day: "+week[dayAdd]);
+    }
+}
